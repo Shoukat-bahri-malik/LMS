@@ -6,7 +6,6 @@ namespace LMS.Models.Domain
     {
 
         [Key]
-   
         public int CategoryId { get; set; }
 
         [Display(Name ="Category Name")]

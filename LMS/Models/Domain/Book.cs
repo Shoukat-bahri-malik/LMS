@@ -23,9 +23,9 @@ namespace LMS.Models.Domain
 
         public string Rating { get; set; }
 
-        [Display(Name ="Category")]
+        //[Display(Name ="Category")]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
-        public  virtual Category ? Categories { get; set; }
+        public  virtual Category ? BookCategories { get; set; }
     }
 }

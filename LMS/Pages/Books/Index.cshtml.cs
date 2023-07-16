@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using LMS.DataLayer;
 using LMS.Models.Domain;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace LMS.Pages.Books
 {
@@ -26,6 +27,10 @@ namespace LMS.Pages.Books
             if (_context.Books != null)
             {
                 Book = await _context.Books.ToListAsync();
+                foreach (var book in Book)
+                {
+                    book.BookCategories = await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == book.CategoryId);
+                }
             }
         }
     }

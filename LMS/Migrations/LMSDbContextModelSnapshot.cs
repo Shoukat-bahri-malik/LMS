@@ -77,13 +77,13 @@ namespace LMS.Migrations
 
             modelBuilder.Entity("LMS.Models.Domain.Book", b =>
                 {
-                    b.HasOne("LMS.Models.Domain.Category", "Categories")
+                    b.HasOne("LMS.Models.Domain.Category", "BookCategories")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categories");
+                    b.Navigation("BookCategories");
                 });
 #pragma warning restore 612, 618
         }
